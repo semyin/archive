@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { renderer } from './renderer'
-import { console, D1Database } from '@cloudflare/workers-types'
+import { D1Database } from '@cloudflare/workers-types'
 
 type Bindings = {
   DB: D1Database
@@ -22,7 +22,7 @@ app.get('/api/users', async (c) => {
     ).all();
     return c.json(results);
   } catch (e) {
-    console.log(e);
+    console.error(e);
     
     
     return c.json({ err: e }, 500);
