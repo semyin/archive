@@ -1,0 +1,22 @@
+# 这是你的新 wrangler.toml 文件
+# 请用这个文件的内容，然后把 wrangler.jsonc 文件删掉
+
+# 项目名称，建议改成和你的仓库名一致，比如 "archive"
+name = "my-app"
+
+# 你的项目的兼容性日期
+compatibility_date = "2025-09-13"
+
+# 你的项目的兼容性标志
+compatibility_flags = ["nodejs_compat"]
+
+# [重要] 告诉 Cloudflare Pages 你的构建输出目录在哪里
+pages_build_output_dir = "dist"
+
+# [核心] D1 数据库绑定配置
+# [[d1_databases]] 语法表示这是一个数组中的一个对象
+[[d1_databases]]
+binding = "DB"
+database_name = "archive"
+database_id = "f05bcc9e-52ab-485c-a3a0-87f2a472a7c1"
+
